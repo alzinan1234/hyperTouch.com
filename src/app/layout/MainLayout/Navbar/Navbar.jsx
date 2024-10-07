@@ -1,14 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "@/assets/Navbar/logo.svg";
+import logo from "@/assets/Navbar/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import ToggleButton from "./ToggleButton";
 import Drawer from "./Drawer";
 import MenuCart from "./MenuCart";
 import { RxCross2 } from "react-icons/rx";
-
 import { ShopingCart } from "./ShopingCart";
 import { Profile } from "./Profile";
 import { AllMenu } from "./AllMenu";
@@ -52,14 +51,14 @@ export const Navbar = () => {
   return (
     <>
       {/* ---------- top white navbar ------- */}
-      <div className="bg-white  text-gray-600 text-center">
+      <div className="bg-darkgray flex justify-center items-center h-[46px] text-white text-center">
         <p className="text-[14px] py-1">One Lifestyle For Everyone</p>
       </div>
       {/* ------------- navbar Container ----- */}
       <div
         className={`${
           isFixed ? "fixed" : ""
-        } navbar-container bg-[#242833] relative `}
+        } navbar-container bg-white relative border-b-2 border-gray-500`}
       >
         <div className="flex max-width mx-auto items-center justify-around md:justify-evenly  ">
           {/* --------- small device toggle button -------- */}
@@ -72,13 +71,13 @@ export const Navbar = () => {
 
           {/* ------------- navbar logo----------- */}
           <div className=" flex w-1/3 mx-auto  justify-center md:justify-start items-center py-[10px] navbarRS:px-2  ">
-            <Link href={"/"} className=" ">
+            <Link href={"/"} className="">
               <div
                 className={`${
                   isFixed
-                    ? "] w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[140px] lg:h-[35px]"
-                    : " w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[160px] lg:h-[40px]   "
-                } flex justify-center items-center duration-500 ease-linear`}
+                    ? "] w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[40px] lg:h-[16px]"
+                    : " w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[60px] lg:h-[20px]   "
+                } flex justify-center items-center duration-500 ease-linear `}
               >
                 <Image
                   src={logo}
@@ -88,34 +87,29 @@ export const Navbar = () => {
               </div>
             </Link>
           </div>
-
           {/* --------  Menu link all ------------- */}
           <div className="all-menus-link navbarRS:flex w-1/3 mx-auto justify-center ">
             <AllMenu />
           </div>
-
           {/* --------------  right Icon menus ----------- */}
           <div
-            className="relative  flex justify-end navbarRS:pe-5 mx-auto 
+            className="relative  flex justify-end mx-auto 
              items-center w-1/3"
           >
-            <ul className="all-link-container items-center flex">
+            <ul className="all-link-container items-center gap-5 flex">
               {/* ---------------searching icon------------- */}
               {!openSearchingbtn && (
                 <li
                   onClick={toggleSearchBtn}
-                  className=" duration-300 cursor-pointer mx-[5px] navbarRS:mx-[7px] block"
+                  className="duration-300 cursor-pointer block"
                 >
-                  <Link
-                    className="navar-text flex flex-col  justify-center items-center text-white uppercase Navbar-font"
-                    href={""}
-                  >
+                  <Link className="" href={""}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
-                      width="18"
-                      height="18"
-                      color="#fff"
+                      width="20"
+                      height="20"
+                      color="#000"
                       fill="none"
                     >
                       <path
@@ -138,7 +132,7 @@ export const Navbar = () => {
               {/* ---------- cart icon --------- */}
               <li
                 onClick={() => toggleDrawerBtn("cart")}
-                className=" duration-300 cursor-pointer mx-[5px] navbarRS:mx-[7px]"
+                className="duration-300 cursor-pointer"
               >
                 <Link
                   className="navar-text relative  flex flex-col "
@@ -152,9 +146,9 @@ export const Navbar = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    color="#fff"
+                    width="22"
+                    height="22"
+                    color="#000"
                     fill="none"
                   >
                     <path
@@ -194,7 +188,7 @@ export const Navbar = () => {
                 </Link>
               </li>
               {/* ---------------- users profile ---------- */}
-              <li className=" duration-300 cursor-pointer mx-[5px] navbarRS:mx-[7px]">
+              <li className=" duration-300 cursor-pointer">
                 <Profile />
               </li>
             </ul>

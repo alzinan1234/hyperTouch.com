@@ -14,5 +14,25 @@ body {
 /* ------ max width size on application ------ */
 
 .max-width {
-  max-width: 1450px !important;
+  max-width: 1400px !important;
+}
+/* ----- all bg color ---- */
+bg-white {
+  background-color: #ffffff !important;
+}
+.bg-darkgray {
+  background-color: #262626 !important;
+}
+.bg-red {
+  background-color: #e22d2d !important;
+}
+bg-green {
+  background-color: #438e44 !important;
+}
+/* ----- all text color ---- */
+.text-darkgray {
+  color: #222222 !important;
+}
+.text-white {
+  color: #fffcf0 !important;
 }
