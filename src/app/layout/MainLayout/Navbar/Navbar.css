@@ -8,6 +8,7 @@
   top: 0px !important;
 }
 .navbar-container.fixed {
+  padding: 6px 0 !important;
   position: fixed;
   top: 0; /* Stick to the top */
   left: 0;
@@ -18,17 +19,17 @@
 }
 /* ----------drower cart ------- */
 
-@media (max-width: 700px) {
+@media (max-width: 676px) {
   .drawer-Cart {
     width: 95% !important;
   }
 }
-@media (min-width: 950px) {
+@media (min-width: 678px) {
   .menu-bar {
     display: none !important;
   }
 }
-@media (max-width: 950px) {
+@media (max-width: 676px) {
   .all-menus-link {
     display: none !important;
   }

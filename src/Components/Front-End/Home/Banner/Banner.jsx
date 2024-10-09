@@ -1,43 +1,33 @@
 "use client";
 import { useState, useEffect } from "react";
-import sliderOne from "@/assets/Banner/banner1.jpg";
-import sliderTwo from "@/assets/Banner/banner2.jpg";
-import sliderFore from "@/assets/Banner/benner.jpg";
-import "./BannerText.css";
+import sliderOne from "@/assets/Banner/banner2.png";
+import sliderTwo from "@/assets/Banner/banner1.jpg";
+import sliderThree from "@/assets/Banner/benner.jpg";
 
 import "./Banner.css";
 
 const slides = [
   {
-    text: " Madame Women Black Full Sleeve",
-    subText: "NEW TREND",
-    buttonText: "DISCOVER MORE",
-    image: sliderOne,
-    textStyle: "text-black font-bold",
-    subTextStyle: "text-red-500",
-    buttonStyle: "text-sm font-medium underline",
-    layout: "justify-start",
+    banner_title: " Madame Man Black Full Sleeve",
+    banner_image: sliderOne,
+    banner_title_color: "#000",
+    link: "/",
+    button_bg: "#222222",
   },
 
   {
-    text: "Shop the Best in Men Clothing",
-    subText: "NEW TREND",
-    buttonText: "DISCOVER MORE",
-    image: sliderFore,
-    textStyle: "text-black font-bold",
-    subTextStyle: "text-red-500",
-    buttonStyle: "text-sm font-medium underline",
-    layout: "justify-start",
+    banner_title: " Madame Man Black Full Sleeve",
+    banner_image: sliderTwo,
+    banner_title_color: "#000",
+    link: "/",
+    button_bg: "#222222",
   },
   {
-    text: "Latest in Men's Fashion World",
-    subText: "NEW TREND",
-    buttonText: "DISCOVER MORE",
-    image: sliderTwo,
-    textStyle: "text-black font-bold",
-    subTextStyle: "text-red-500",
-    buttonStyle: "text-sm font-medium underline",
-    layout: "justify-start",
+    banner_title: " Madame Man Black Full Sleeve 22",
+    banner_image: sliderThree,
+    banner_title_color: "#fff",
+    link: "/",
+    button_bg: "#222222",
   },
 ];
 
@@ -62,53 +52,90 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 80000); // Change slide every 4 seconds
+    }, 3000); // Change slide every 4 seconds
 
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
 
   return (
     <div className="overflow-hidden ">
-      <div className="relative mx-auto h-[80vh] overflow-hidden ">
+      <div className="relative mx-auto h-[50vh] md:h-[80vh] overflow-hidden ">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute  left-0 w-full h-full transition-opacity duration-700 ease-in-out ${
+            className={`absolute left-0 w-full h-full transition-opacity duration-700 ease-in-out ${
               index === currentSlide
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-0"
-            } flex md:flex-row items-center ${
+                ? "opacity-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 translate-y-0 pointer-events-none"
+            }  ${
               slide.layout
-            } h-[100%] w-full bg-cover bg-center flex items-center justify-center`}
+            } h-[100%] w-full bg-cover bg-center flex items-center justify-center object-contain`}
             style={{
-              backgroundImage: `url(${slide.image.src})`,
+              backgroundImage: `url(${slide?.banner_image?.src})`,
               backgroundAttachment: "fixed",
             }}
           >
-            <div className="absolute borders top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out flex md:flex-row items-center">
-              {/* ------ baner title----- */}
+            <div className="absolute z-[20] top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out flex md:flex-row items-center">
+              {/* ------ banner title----- */}
               <div
-                className={`w-[50%] relative borders z-[2000000]  md:ps-[90px] flex flex-col justify-center items-center  p-4 md:pl-12 text-left transition-transform duration-700 ease-in-out ${
-                  index === currentSlide ? "translate-x-0" : "translate-x-5"
-                }`}
+                className={`md:w-[50%] relative z-[20] md:ps-[90px] flex flex-col justify-center items-center p-4 md:pl-12 text-left transition-transform duration-700 ease-in-out `}
               >
-                <p className="banner-title-1 text-start w-[100%] relative z-[20000000]">
+                {/* Make sure to add proper z-index and no pointer-events issues */}
+                <p
+                  className={`banner-title-1 ling-hight-26px md:text-[22px] px-5 md:px-0 text-center md:text-start text-[14px] w-[100%] relative z-[20] text-[${
+                    slide?.banner_title_color
+                  }] cursor-text
+                    transition-transform duration-300 ease-in-out ${
+                      index === currentSlide
+                        ? "translate-x-0"
+                        : "translate-x-10"
+                    }
+                    `}
+                >
                   100% Original Products
                 </p>
 
                 <h2
-                  className={`banner-title-2 md:mt-[20px] ${slide.textStyle}`}
+                  className={`banner-title-2 ling-hight-26px xs:px-1 sm:px-5 md:px-0 text-center md:text-start text-[38px] font-extrabold md:text-[68px] md:mt-[20px] text-[${
+                    slide?.banner_title_color
+                  }] cursor-text
+                    transition-transform duration-700 ease-in-out ${
+                      index === currentSlide
+                        ? "translate-x-0"
+                        : "translate-x-14"
+                    }
+                    `}
                 >
-                  {slide.text?.slice(0, 200)} <br />
+                  {slide.banner_title?.slice(0, 200)}
                 </h2>
 
-                <p className="banner-title-1 w-[100%] md:mt-[20px]">
-                  This Month From <span className="span-price">$59.00</span>
+                <p
+                  className={`hidden md:flex banner-title-1 ling-hight-26px text-[16px] md:text-[25px] px-5 md:px-0 text-center md:text-start justify-center md:justify-start w-[100%] md:mt-[20px] text-[${
+                    slide?.banner_title_color
+                  }] cursor-text
+                    transition-transform duration-500 ease-in-out ${
+                      index === currentSlide
+                        ? "translate-x-0"
+                        : "translate-x-16"
+                    }
+                    `}
+                >
+                  This Month From{" "}
+                  <span className="span-price text-[18px] md:text-[34px]">
+                    $59.00
+                  </span>
                 </p>
 
-                <div className="flex w-[100%] md:mt-[30px]">
-                  <button className={` ${slide.buttonStyle} shiny-cta`}>
-                    {slide.buttonText}
+                <div
+                  className={`flex justify-center md:justify-start w-[100%] mt-[15px] md:mt-[30px] transition-transform duration-700 ease-in-out ${
+                    index === currentSlide ? "translate-y-0" : "translate-y-12"
+                  }`}
+                >
+                  <button
+                    className={`banner-button md:text-[17px] text-[12px] px-[20px] md:px-[34px] md:py-[14px] py-[5px] cursor-pointer`}
+                    style={{ backgroundColor: slide.button_bg }}
+                  >
+                    Shop Now
                   </button>
                 </div>
               </div>
@@ -119,9 +146,9 @@ const Banner = () => {
         {/* Next and Previous Buttons */}
         <button
           onClick={prevSlide}
-          className={`absolute  duration-500 left-4 bottom-0 md:top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full `}
+          className={`hidden md:block absolute duration-500 left-4 bottom-0 md:top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full `}
         >
-          <div id="arrow_2" className={`arrow-wrapper  relative `}>
+          <div id="arrow_2" className={`arrow-wrapper relative `}>
             <div className="arrow arrow--left flex items-center justify-center">
               <span onClick={() => setsClick("prev")} className={` me-2 mt-2`}>
                 Prev
@@ -131,7 +158,7 @@ const Banner = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 bottom-0 md:top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full"
+          className="hidden md:block absolute right-4 bottom-0 md:top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full"
         >
           <div id="arrow_2" className="arrow-wrapper relative  ">
             <div className="arrow arrow--right flex items-center justify-center">
@@ -148,10 +175,10 @@ const Banner = () => {
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === currentSlide ? "bg-black" : "bg-gray-400"
+              className={`md:w-3 md:h-3 w-2 h-2 rounded-full border-2 border-white p-1 ${
+                index === currentSlide ? "bg-gray-500" : "bg-gray-400"
               }`}
-            />
+            ></button>
           ))}
         </div>
       </div>

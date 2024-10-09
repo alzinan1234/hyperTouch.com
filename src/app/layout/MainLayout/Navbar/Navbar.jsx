@@ -58,7 +58,7 @@ export const Navbar = () => {
       <div
         className={`${
           isFixed ? "fixed" : ""
-        } navbar-container bg-white relative border-b-2 border-gray-500`}
+        } navbar-container bg-white relative`}
       >
         <div className="flex max-width mx-auto items-center justify-around md:justify-evenly  ">
           {/* --------- small device toggle button -------- */}
@@ -75,8 +75,8 @@ export const Navbar = () => {
               <div
                 className={`${
                   isFixed
-                    ? "] w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[40px] lg:h-[16px]"
-                    : " w-[125px] h-[30px] md:w-[200px] md:h-[36px] lg:w-[60px] lg:h-[20px]   "
+                    ? "hidden md:flex w-[40px] h-[12px] md:w-[45px] md:h-[16px] lg:w-[50px] lg:h-[20px] "
+                    : " w-[50px] h-[15px] md:w-[55px] md:h-[28px] lg:w-[65px] lg:h-[22px]   "
                 } flex justify-center items-center duration-500 ease-linear `}
               >
                 <Image

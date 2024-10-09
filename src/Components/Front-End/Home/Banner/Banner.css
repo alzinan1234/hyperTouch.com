@@ -1,44 +1,46 @@
+.ling-hight-26px {
+  line-height: 26px;
+}
+
 .arrow-wrapper:hover h1 {
   opacity: 1;
 }
+.banner-button {
+  display: inline-block;
+  box-sizing: border-box;
+  background: rgb(34, 34, 34);
+  font-family: Jost, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.5px;
+}
 .banner-title-1 {
-  display: flex;
-  font-size: 22px;
   font-family: Jost, Arial, Helvetica, sans-serif;
   font-weight: 400;
-  text-align: left;
-  line-height: 26px;
-  color: rgb(34, 34, 34);
   letter-spacing: 0.3px;
 }
 
 .banner-title-2 {
-  font-size: 68px;
   font-family: Jost, Arial, Helvetica, sans-serif;
   font-weight: 400;
-  text-align: left;
   line-height: 80px;
-  color: rgb(34, 34, 34);
 }
 .banner-title-3 {
   margin: 0px 0px 20px;
   display: block;
   box-sizing: border-box;
-  font-size: 25px;
   font-family: Jost, Arial, Helvetica, sans-serif;
   font-weight: 400;
-  text-align: left;
-  line-height: 26px;
-  color: rgb(34, 34, 34);
   letter-spacing: 0.5px;
 }
 .span-price {
   display: inline;
   box-sizing: border-box;
-  font-size: 34px;
   font-weight: 600;
   text-align: left;
-  line-height: 26px;
   color: rgb(255, 0, 0) !important;
   letter-spacing: 0.5px;
 }
@@ -119,5 +121,11 @@
   }
   100% {
     background-color: #005f6b;
+  }
+}
+
+@media (max-width: 667px) {
+  .ling-hight-26px {
+    line-height: normal !important;
   }
 }
