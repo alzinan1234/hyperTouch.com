@@ -11,6 +11,10 @@ body {
   font-family: "Jost", Arial, Helvetica, sans-serif;
 }
 
+.borders {
+  border: 1px solid red !important;
+}
+
 /* ------ max width size on application ------ */
 
 .max-width {
