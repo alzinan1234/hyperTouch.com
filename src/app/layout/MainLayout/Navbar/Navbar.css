@@ -36,12 +36,11 @@
 .navbar-container:not(.fixed) {
   padding: 16px 0px !important;
 }
-
+/* ---dhlw--- */
 .transition-height {
   transition: height 0.3s ease;
   overflow: hidden;
 }
-
 /* ------------ navbar menu link text --------- */
 .link-size {
   position: relative;
