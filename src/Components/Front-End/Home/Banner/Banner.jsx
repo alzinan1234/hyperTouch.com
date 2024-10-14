@@ -52,7 +52,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // Change slide every 4 seconds
+    }, 3000);
 
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
@@ -85,10 +85,10 @@ const Banner = () => {
                   className={`banner-title-1 ling-hight-26px md:text-[22px] px-5 md:px-0 text-center md:text-start text-[14px] w-[100%] relative z-[20] text-[${
                     slide?.banner_title_color
                   }] cursor-text
-                    transition-transform duration-300 ease-in-out ${
+                    transition-transform duration-700 ease-in-out ${
                       index === currentSlide
                         ? "translate-x-0"
-                        : "translate-x-10"
+                        : "translate-x-16"
                     }
                     `}
                 >

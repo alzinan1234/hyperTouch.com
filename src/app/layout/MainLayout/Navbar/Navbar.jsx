@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "@/assets/Navbar/logo.png";
+
 import Image from "next/image";
 import Link from "next/link";
 import ToggleButton from "./ToggleButton";
@@ -11,6 +12,7 @@ import { RxCross2 } from "react-icons/rx";
 import { ShopingCart } from "./ShopingCart";
 import { Profile } from "./Profile";
 import { AllMenu } from "./AllMenu";
+import { TopNavbar } from "./TopNavbar";
 
 export const Navbar = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -51,9 +53,7 @@ export const Navbar = () => {
   return (
     <>
       {/* ---------- top white navbar ------- */}
-      <div className="bg-darkgray flex justify-center items-center h-[46px] text-white text-center">
-        <p className="text-[14px] py-1">One Lifestyle For Everyone</p>
-      </div>
+      <TopNavbar />
       {/* ------------- navbar Container ----- */}
       <div
         className={`${
@@ -62,7 +62,7 @@ export const Navbar = () => {
       >
         <div className="flex max-width mx-auto items-center justify-around md:justify-evenly  ">
           {/* --------- small device toggle button -------- */}
-          <div className="menu-bar navbarRS:hidden block  w-[20%]  md:w-1/3 mx-auto  ">
+          <div className="menu-bar  block w-[20%]  md:w-1/3 mx-auto  ">
             <ToggleButton setIsOpen={setIsOpen} isOpen={isOpen} />
             <Drawer isFixed={isFixed} isOpen={isOpen} setIsOpen={setIsOpen}>
               <MenuCart isClient={isClient} setIsOpen={setIsOpen} />
