@@ -52,7 +52,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000); // Change slide every 4 seconds
+    }, 3000);
 
     return () => clearInterval(interval); // Clear the interval on component unmount
   }, []);
