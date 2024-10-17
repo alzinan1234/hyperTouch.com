@@ -10,6 +10,10 @@ const Footer = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
           <div>
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div>
             <h2>Contact Us</h2>
             <p>
               <a href="tel:+1234567890">+1 234 567 890</a>
