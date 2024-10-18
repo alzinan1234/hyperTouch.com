@@ -59,6 +59,21 @@ const Footer = () => {
         <div className="text-center py-3">
           <p>&copy; 2022 All rights reserved.</p>
         </div>
+        <div className="text-center py-3">
+          <p>&copy; 2022 All rights reserved.</p>
+        </div>
+        <div className="text-center py-3">
+          <p>&copy; 2022 All rights reserved.</p>
+        </div>
+        <div className="text-center py-3">
+          <p>&copy; 2022 All rights reserved.</p>
+        </div>
+        <div className="text-center py-3">
+          <p>&copy; 2022 All rights reserved.</p>
+        </div>
+        <div className="text-center py-3">
+          <p>&copy; 2022 All rights reserved.</p>
+        </div>
       </footer>
     </>
   );
