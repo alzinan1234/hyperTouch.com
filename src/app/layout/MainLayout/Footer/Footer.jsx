@@ -39,6 +39,12 @@ const Footer = () => {
             <p>
               <a href="mailto:support@example.com">support@example.com</a>
             </p>
+            <p>
+              <a href="mailto:support@example.com">support@example.com</a>
+            </p>
+            <p>
+              <a href="mailto:support@example.com">support@example.com</a>
+            </p>
           </div>
         </div>
         <div className="text-center py-3">
