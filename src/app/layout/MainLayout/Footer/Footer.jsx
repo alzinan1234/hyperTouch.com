@@ -72,6 +72,8 @@ const Footer = () => {
           <p>&copy; 2022 All rights reserved.</p>
         </div>
       </footer>
+
+      {/* footer add  */}
     </>
   );
 };
