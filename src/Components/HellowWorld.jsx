@@ -11,9 +11,7 @@ const HellowWorld = () => {
       <button onClick={() => localStorage.setItem("name", "User")}>
         Set Name
       </button>
-      <button onClick={() => localStorage.removeItem("name")}>
-        Remove Name
-      </button>
+
       <p>
         <strong>Session Storage:</strong> {sessionStorage.getItem("counter")}
       </p>
