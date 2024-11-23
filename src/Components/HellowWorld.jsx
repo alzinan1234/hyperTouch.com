@@ -12,9 +12,6 @@ const HellowWorld = () => {
         Set Name
       </button>
 
-      <p>
-        <strong>Session Storage:</strong> {sessionStorage.getItem("counter")}
-      </p>
       <button onClick={() => sessionStorage.setItem("counter", "0")}>
         Reset Counter
       </button>
