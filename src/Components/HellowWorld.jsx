@@ -11,10 +11,6 @@ const HellowWorld = () => {
       <button onClick={() => localStorage.setItem("name", "User")}>
         Set Name
       </button>
-
-      <button onClick={() => sessionStorage.setItem("counter", "0")}>
-        Reset Counter
-      </button>
     </div>
   );
 };
