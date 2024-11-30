@@ -8,9 +8,6 @@ const HellowWorld = () => {
       <button onClick={() => alert("Button clicked!")}>Click Me!</button>
       <input type="text" placeholder="Enter your name" />
       <p>Welcome, {localStorage.getItem("name")}!</p>
-      <button onClick={() => localStorage.setItem("name", "User")}>
-        Set Name
-      </button>
     </div>
   );
 };
